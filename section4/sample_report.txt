@@ -1,0 +1,10 @@
+=== Report Summary ===
+  total_rows: 3
+  monthly_payment_mean: 816.83
+  monthly_payment_sum: 2450.5
+
+=== Data ===
+agreement_id customer_id asset_type  monthly_payment status
+      LN-001        C100        CAR            450.0 active
+      LN-002        C101  EQUIPMENT           1200.5 active
+      LN-003        C102      FLEET            800.0 closed

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        h1 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+        th, td { border: 1px solid #bdc3c7; padding: 0.5rem; text-align: left; }
+        th { background-color: #2c3e50; color: #fff; }
+        tr:nth-child(even) { background-color: #ecf0f1; }
+        .summary { margin-bottom: 2rem; }
+        .summary dt { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <section class="summary">
+        <h2>Summary</h2>
+        <dl>
+        {% for key, value in summary.items() %}
+            <dt>{{ key }}</dt>
+            <dd>{{ value }}</dd>
+        {% endfor %}
+        </dl>
+    </section>
+
+    <section>
+        <h2>Data</h2>
+        <table>
+            <thead>
+                <tr>
+                {% for col in columns %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in rows %}
+                <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
