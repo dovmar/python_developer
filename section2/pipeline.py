@@ -17,6 +17,8 @@ logging.basicConfig(
 
 DB_PATH = Path(__file__).parent / "pipeline.db"
 DB_URL = f"sqlite:///{DB_PATH}"
+EXCEL_PATH = Path(__file__).parent / "report.xlsx"
+TXT_PATH = Path(__file__).parent / "report.txt"
 
 
 class AgreementPipeline:
@@ -63,9 +65,7 @@ class AgreementPipeline:
 
     # ── load ────────────────────────────────────────────────────────────
 
-    def load(
-        self, excel_path: str = "report.xlsx", txt_path: str = "report.txt"
-    ) -> None:
+    def load(self, excel_path: Path = EXCEL_PATH, txt_path: Path = TXT_PATH) -> None:
         """Write results to SQLite, Excel, and a plain-text summary."""
         if self._cleaned is None or self._risk_scores is None:
             raise RuntimeError("Call transform() before load().")

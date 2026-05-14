@@ -153,3 +153,7 @@ Thumbs.db
 
 # Excel files
 *.xlsx
+
+# Text files (except sample_report.txt)
+*.txt
+!section4/sample_report.txt
